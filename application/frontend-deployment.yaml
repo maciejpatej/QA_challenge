@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    streaming-service: frontend
+  name: frontend
+  namespace: streaming-service-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      streaming-service: frontend
+  template:
+    metadata:
+      labels:
+        streaming-service: frontend
+    spec:
+      containers:
+      - image: quadred/development:frontend
+        name: frontend
+        ports:
+        - containerPort: 3000
+      restartPolicy: Always

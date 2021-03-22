@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    streaming-service: api
+  name: api
+  namespace: streaming-service-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      streaming-service: api
+  template:
+    metadata:
+      labels:
+        streaming-service: api
+    spec:
+      containers:
+      - image: quadred/development:api
+        name: api
+        ports:
+        - containerPort: 5000
+      restartPolicy: Always
