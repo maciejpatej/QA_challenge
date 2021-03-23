@@ -1,7 +1,9 @@
 resources:
   - namespace.yaml
-  - ingress.yaml
   - api-deployment.yaml
   - api-service.yaml
   - frontend-deployment.yaml
   - frontend-service.yaml
+  - treafik-deployment.yaml
+  - traefik-rbac.yaml
+  - ingress.yaml
